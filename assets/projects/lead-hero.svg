@@ -10,7 +10,7 @@
       <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#4f8cff" stop-opacity="0.25"/>
+      <stop offset="0%" stop-color="#4f8cff" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="#4f8cff" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="stageGrad" x1="0" y1="0" x2="0" y2="1">
@@ -18,8 +18,8 @@
       <stop offset="100%" stop-color="#131d2e"/>
     </linearGradient>
     <linearGradient id="funnelGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#34d399"/>
-      <stop offset="100%" stop-color="#22d3ee"/>
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.12"/>
     </linearGradient>
     <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
       <feGaussianBlur stdDeviation="12"/>
@@ -33,8 +33,8 @@
   </defs>
 
   <rect width="1600" height="900" fill="url(#bg)"/>
-  <circle cx="300" cy="220" r="300" fill="url(#glow)"/>
-  <circle cx="1350" cy="650" r="320" fill="url(#glowB)"/>
+  <circle cx="350" cy="200" r="300" fill="url(#glow)"/>
+  <circle cx="1300" cy="700" r="320" fill="url(#glowB)"/>
 
   <g opacity="0.5">
     <path d="M0 740 H1600" stroke="#1b2638" stroke-width="1"/>
@@ -43,74 +43,81 @@
     <path d="M120 0 V900" stroke="#1b2638" stroke-width="1"/>
   </g>
 
-  <g filter="url(#soft)" opacity="0.5">
-    <circle cx="380" cy="240" r="70" fill="#34d399"/>
-  </g>
-
   <text x="800" y="88" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800" letter-spacing="6" fill="#e5e9f2">LEAD INTELLIGENCE</text>
   <text x="800" y="126" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="17" letter-spacing="3" fill="#7c8aa0">AUTOMATED LEAD ENRICHMENT</text>
 
+  <!-- Stage flow -->
   <g font-family="Inter, system-ui, sans-serif">
     <g>
-      <rect x="150" y="230" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#34d399" stroke-width="2"/>
+      <rect x="150" y="225" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#34d399" stroke-width="2"/>
+      <circle cx="185" cy="262" r="5" fill="#34d399"/>
       <text x="245" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#e5e9f2">Google Forms</text>
-      <text x="245" y="296" text-anchor="middle" font-size="11" fill="#7c8aa0">lead intake</text>
+      <text x="245" y="294" text-anchor="middle" font-size="11" fill="#7c8aa0">lead intake</text>
     </g>
     <g>
-      <rect x="430" y="230" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#34d399" stroke-width="2"/>
+      <rect x="430" y="225" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#34d399" stroke-width="2"/>
+      <circle cx="465" cy="262" r="5" fill="#34d399"/>
       <text x="525" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#e5e9f2">Apps Script</text>
       <text x="525" y="284" text-anchor="middle" font-size="14" font-weight="700" fill="#e5e9f2">+ Webhook</text>
       <text x="525" y="306" text-anchor="middle" font-size="11" fill="#7c8aa0">Cloudflare Tunnel</text>
     </g>
     <g>
-      <rect x="710" y="230" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#a78bfa" stroke-width="2"/>
-      <circle cx="750" cy="280" r="6" fill="#a78bfa"/>
+      <rect x="710" y="225" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#a78bfa" stroke-width="2"/>
+      <circle cx="745" cy="262" r="5" fill="#a78bfa"/>
       <text x="805" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#e5e9f2">AI Enrichment</text>
-      <text x="805" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="#e5e9f2">+ Guardrails</text>
-      <text x="805" y="310" text-anchor="middle" font-size="11" fill="#a78bfa">OpenAI</text>
+      <text x="805" y="284" text-anchor="middle" font-size="14" font-weight="700" fill="#e5e9f2">+ Guardrails</text>
+      <text x="805" y="306" text-anchor="middle" font-size="11" fill="#a78bfa">OpenAI</text>
     </g>
     <g>
-      <rect x="990" y="230" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#4f8cff" stroke-width="2"/>
+      <rect x="990" y="225" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#4f8cff" stroke-width="2"/>
+      <circle cx="1025" cy="262" r="5" fill="#4f8cff"/>
       <text x="1085" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#e5e9f2">Airtable CRM</text>
-      <text x="1085" y="296" text-anchor="middle" font-size="11" fill="#7c8aa0">duplicate detection</text>
+      <text x="1085" y="294" text-anchor="middle" font-size="11" fill="#7c8aa0">duplicate detection</text>
     </g>
     <g>
-      <rect x="1270" y="230" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#22d3ee" stroke-width="2"/>
+      <rect x="1270" y="225" width="190" height="100" rx="14" fill="url(#stageGrad)" stroke="#22d3ee" stroke-width="2"/>
+      <circle cx="1305" cy="262" r="5" fill="#22d3ee"/>
       <text x="1365" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#e5e9f2">Slack + Email</text>
-      <text x="1365" y="296" text-anchor="middle" font-size="11" fill="#7c8aa0">sales notified</text>
+      <text x="1365" y="294" text-anchor="middle" font-size="11" fill="#7c8aa0">sales notified</text>
     </g>
   </g>
 
+  <!-- Stage arrows -->
   <g stroke="#2a3a55" stroke-width="3" fill="none">
-    <path d="M340 280 H422" marker-end="url(#arrow)"/>
-    <path d="M620 280 H702" marker-end="url(#arrow)"/>
-    <path d="M900 280 H982" marker-end="url(#arrow)"/>
-    <path d="M1180 280 H1262" marker-end="url(#arrow)"/>
+    <path d="M340 275 H424" marker-end="url(#arrow)"/>
+    <path d="M620 275 H704" marker-end="url(#arrow)"/>
+    <path d="M900 275 H984" marker-end="url(#arrow)"/>
+    <path d="M1180 275 H1264" marker-end="url(#arrow)"/>
   </g>
 
-  <g opacity="0.16">
-    <path d="M330 560 L560 500 L800 560 L1040 500 L1270 560 L1270 700 L1040 760 L800 700 L560 760 L330 700 Z" fill="#34d399"/>
+  <!-- Funnel connector -->
+  <g stroke="#34d399" stroke-width="2.5" fill="none" opacity="0.85">
+    <path d="M525 325 Q 525 430 700 470" marker-end="url(#arrow)"/>
+    <path d="M1365 325 Q 1365 430 1150 470" marker-end="url(#arrow)"/>
   </g>
-  <path d="M330 560 L560 500 L800 560 L1040 500 L1270 560 L1270 700 L1040 760 L800 700 L560 760 L330 700 Z" fill="none" stroke="#34d399" stroke-width="1.5" opacity="0.5"/>
-
-  <path d="M330 560 L560 500 L800 560 L1040 500 L1270 560" fill="none" stroke="#34d399" stroke-width="3" opacity="0.9"/>
-  <path d="M1270 560 L1270 700 L1040 760 L800 700 L560 760 L330 700 Z" fill="none" stroke="#34d399" stroke-width="3" opacity="0.9"/>
-
-  <g font-family="Inter, system-ui, sans-serif" text-anchor="middle">
-    <text x="420" y="640" font-size="14" font-weight="700" fill="#34d399">raw</text>
-    <text x="800" y="630" font-size="14" font-weight="700" fill="#34d399">enriched</text>
-    <text x="1170" y="650" font-size="14" font-weight="700" fill="#34d399">qualified</text>
-  </g>
-
-  <g opacity="0.7" stroke="#34d399" stroke-width="2">
-    <path d="M420 640 V688" stroke-dasharray="4 4"/>
-    <path d="M800 630 V672" stroke-dasharray="4 4"/>
-    <path d="M1170 650 V700" stroke-dasharray="4 4"/>
-  </g>
-
-  <text x="800" y="492" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#5d6b82">duplicates rejected · returning contacts recognized · invalid input falls back safely</text>
+  <text x="800" y="352" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#5d6b82">enriched leads flow in</text>
 
   <g filter="url(#soft)" opacity="0.4">
-    <circle cx="1200" cy="640" r="60" fill="#4f8cff"/>
+    <circle cx="800" cy="600" r="80" fill="#34d399"/>
   </g>
+
+  <!-- Funnel -->
+  <g>
+    <path d="M700 480 L900 480 L820 760 L700 760 Z" fill="url(#funnelGrad)" stroke="#34d399" stroke-width="2" opacity="0.9"/>
+    <path d="M700 480 L900 480 L820 760 L700 760 Z" fill="none" stroke="#34d399" stroke-width="2"/>
+    <path d="M760 480 L812 760" stroke="#34d399" stroke-width="1.5" opacity="0.5" fill="none"/>
+    <path d="M840 480 L828 760" stroke="#34d399" stroke-width="1.5" opacity="0.5" fill="none"/>
+
+    <text x="800" y="540" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#34d399">qualified</text>
+    <text x="800" y="562" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7c8aa0">sales-ready leads</text>
+
+    <text x="800" y="640" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#a78bfa">enriched</text>
+    <text x="800" y="662" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7c8aa0">AI company data</text>
+
+    <text x="800" y="730" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#e5e9f2">duplicates rejected</text>
+  </g>
+
+  <!-- Return path -->
+  <path d="M820 760 Q 1380 800 1380 540 Q 1380 430 1280 325" stroke="#4f8cff" stroke-width="2" stroke-dasharray="7 7" fill="none" opacity="0.8" marker-end="url(#arrowB)"/>
+  <text x="1330" y="640" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#7c8aa0" transform="rotate(90 1330 640)">returning contacts → Slack + email</text>
 </svg>
