@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="LexRAG hybrid retrieval and citation-grounded generation pipeline diagram">
+  <defs>
+    <linearGradient id="lbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f1a"/>
+      <stop offset="55%" stop-color="#0e1524"/>
+      <stop offset="100%" stop-color="#0b0f1a"/>
+    </linearGradient>
+    <radialGradient id="lglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4f8cff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#4f8cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lglowP" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lnodeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b2638"/>
+      <stop offset="100%" stop-color="#141d2e"/>
+    </linearGradient>
+    <linearGradient id="lagentGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e2b41"/>
+      <stop offset="100%" stop-color="#172238"/>
+    </linearGradient>
+    <linearGradient id="laccGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#223353"/>
+      <stop offset="100%" stop-color="#1b2945"/>
+    </linearGradient>
+    <linearGradient id="lbarGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#182539"/>
+      <stop offset="100%" stop-color="#131d2e"/>
+    </linearGradient>
+    <marker id="larrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4f8cff"/>
+    </marker>
+    <marker id="larrowP" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#a78bfa"/>
+    </marker>
+    <marker id="larrowW" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#e5e9f2"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#lbg)"/>
+  <circle cx="260" cy="160" r="320" fill="url(#lglow)"/>
+  <circle cx="1380" cy="260" r="300" fill="url(#lglowP)"/>
+  <circle cx="700" cy="830" r="260" fill="url(#lglow)"/>
+
+  <g opacity="0.5">
+    <path d="M0 750 H1600" stroke="#1b2638" stroke-width="1"/>
+    <path d="M0 820 H1600" stroke="#1b2638" stroke-width="1"/>
+    <path d="M40 0 V900" stroke="#1b2638" stroke-width="1"/>
+    <path d="M120 0 V900" stroke="#1b2638" stroke-width="1"/>
+  </g>
+
+  <text x="800" y="88" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="800" letter-spacing="6" fill="#e5e9f2">LEXRAG</text>
+  <text x="800" y="126" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="17" letter-spacing="3" fill="#7c8aa0">LEGAL CONTRACT &amp; CASE-LAW RAG</text>
+
+  <!-- Upload -->
+  <g>
+    <ellipse cx="190" cy="300" rx="58" ry="58" fill="#4f8cff" opacity="0.15"/>
+    <circle cx="190" cy="300" r="45" fill="url(#lnodeGrad)" stroke="#4f8cff" stroke-width="2.5"/>
+    <text x="190" y="296" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#e5e9f2">Upload</text>
+    <text x="190" y="314" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#7c8aa0">PDF contract</text>
+  </g>
+
+  <!-- Upload -> Chunk -->
+  <path d="M235 300 Q 320 300 405 300" stroke="#4f8cff" stroke-width="2.5" fill="none" marker-end="url(#larrow)"/>
+
+  <!-- Chunk & Embed -->
+  <g>
+    <ellipse cx="460" cy="300" rx="66" ry="66" fill="#a78bfa" opacity="0.14"/>
+    <circle cx="460" cy="300" r="52" fill="url(#laccGrad)" stroke="#a78bfa" stroke-width="2.5"/>
+    <text x="460" y="293" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#e5e9f2">Chunk</text>
+    <text x="460" y="311" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a78bfa">&amp; embed</text>
+  </g>
+
+  <!-- Chunk -> two search nodes -->
+  <path d="M448 348 Q 380 460 300 555" stroke="#2a3a55" stroke-width="2.5" fill="none" marker-end="url(#larrow)"/>
+  <path d="M475 350 Q 560 460 640 555" stroke="#2a3a55" stroke-width="2.5" fill="none" marker-end="url(#larrow)"/>
+  <text x="460" y="440" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#5d6b82">parallel search, every query</text>
+
+  <!-- Vector Search -->
+  <g font-family="Inter, system-ui, sans-serif">
+    <circle cx="260" cy="610" r="52" fill="url(#lagentGrad)" stroke="#4f8cff" stroke-width="2"/>
+    <circle cx="260" cy="610" r="36" fill="#4f8cff" opacity="0.1"/>
+    <text x="260" y="602" text-anchor="middle" font-size="13" font-weight="700" fill="#e5e9f2">Vector</text>
+    <text x="260" y="617" text-anchor="middle" font-size="13" font-weight="700" fill="#e5e9f2">search</text>
+    <text x="260" y="635" text-anchor="middle" font-size="10" fill="#7c8aa0">Qdrant · bge-m3</text>
+  </g>
+
+  <!-- Keyword Search -->
+  <g font-family="Inter, system-ui, sans-serif">
+    <circle cx="680" cy="610" r="52" fill="url(#lagentGrad)" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="680" cy="610" r="36" fill="#a78bfa" opacity="0.1"/>
+    <text x="680" y="602" text-anchor="middle" font-size="13" font-weight="700" fill="#e5e9f2">Keyword</text>
+    <text x="680" y="617" text-anchor="middle" font-size="13" font-weight="700" fill="#e5e9f2">search</text>
+    <text x="680" y="635" text-anchor="middle" font-size="10" fill="#7c8aa0">Elasticsearch · BM25</text>
+  </g>
+
+  <!-- both -> fuse+rerank -->
+  <path d="M305 575 Q 620 430 895 358" stroke="#4f8cff" stroke-width="2.5" fill="none" opacity="0.85" marker-end="url(#larrow)"/>
+  <path d="M700 562 Q 830 460 918 372" stroke="#a78bfa" stroke-width="2.5" fill="none" opacity="0.85" marker-end="url(#larrowP)"/>
+
+  <!-- Fuse + Rerank -->
+  <g>
+    <ellipse cx="980" cy="330" rx="72" ry="72" fill="#4f8cff" opacity="0.14"/>
+    <circle cx="980" cy="330" r="58" fill="url(#laccGrad)" stroke="#4f8cff" stroke-width="3"/>
+    <text x="980" y="318" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#e5e9f2">RRF fuse</text>
+    <text x="980" y="336" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#e5e9f2">+ rerank</text>
+    <text x="980" y="353" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#a78bfa">cross-encoder</text>
+  </g>
+
+  <!-- Fuse -> Generate -->
+  <path d="M1038 320 Q 1180 300 1288 300" stroke="#e5e9f2" stroke-width="2.5" fill="none" opacity="0.9" marker-end="url(#larrowW)"/>
+  <text x="1160" y="286" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#e5e9f2">top evidence only</text>
+
+  <!-- Generate -->
+  <g>
+    <ellipse cx="1360" cy="300" rx="72" ry="72" fill="#a78bfa" opacity="0.14"/>
+    <circle cx="1360" cy="300" r="56" fill="url(#laccGrad)" stroke="#a78bfa" stroke-width="3"/>
+    <text x="1360" y="288" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#e5e9f2">Generate</text>
+    <text x="1360" y="306" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#a78bfa">+ cite</text>
+    <text x="1360" y="322" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#7c8aa0">or refuse</text>
+  </g>
+
+  <!-- Generate -> policy bar -->
+  <path d="M1360 356 V 786" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6 6" fill="none" opacity="0.7"/>
+
+  <!-- Policy bar -->
+  <g>
+    <rect x="960" y="790" width="800" height="66" rx="14" fill="url(#lbarGrad)" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="1360" y="820" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#e5e9f2">Citation-Grounded, Refusal-Aware</text>
+    <text x="1360" y="842" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#7c8aa0">every claim traces to a retrieved passage — no evidence, no answer</text>
+  </g>
+
+  <text x="800" y="724" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#5d6b82">quality measured against a golden dataset &amp; enforced as a CI gate</text>
+</svg>
